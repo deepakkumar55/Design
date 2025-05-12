@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepak Kumar - GitHub Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Typed.js for text animation -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch">
+        <label for="theme-switch" class="theme-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+        </label>
+    </div>
+
+    <!-- Gradient Background -->
+    <div class="gradient-bg">
+        <div class="gradient-animation"></div>
+    </div>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="profile-pic">
+                <div class="profile-overlay"></div>
+                <img src="" alt="Deepak Kumar" id="profile-image">
+                <div class="social-links">
+                    <a href="" target="_blank" id="github-link"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/deepakkumar55" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/deepakkumar55" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#contact-section" class="smooth-scroll"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-content">
+                <div class="name-badge">GitHub Portfolio</div>
+                <h1 id="profile-name">Loading...</h1>
+                <h2 id="profile-username">@deepakkumar55</h2>
+                <div class="typing-container">
+                    <span id="typing-text"></span>
+                </div>
+                <div class="hero-bio" id="profile-bio">Loading bio...</div>
+                <div class="cta-buttons">
+                    <a href="#projects-section" class="btn primary-btn smooth-scroll">
+                        <i class="fas fa-project-diagram"></i> View Projects
+                    </a>
+                    <a href="#contact-section" class="btn secondary-btn smooth-scroll">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- GitHub Stats Dashboard -->
+        <section class="stats-dashboard" id="stats-section">
+            <h2 class="section-title"><i class="fas fa-chart-line"></i> GitHub Dashboard</h2>
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-code-commit"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Total Commits</h3>
+                        <div class="stat-number" id="total-commits">0</div>
+                        <div class="stat-subtitle">Lifetime contributions</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Total Stars</h3>
+                        <div class="stat-number" id="total-stars">0</div>
+                        <div class="stat-subtitle">Across all repositories</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Repositories</h3>
+                        <div class="stat-number" id="total-repos">0</div>
+                        <div class="stat-subtitle">Public repositories</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Followers</h3>
+                        <div class="stat-number" id="followers-count">0</div>
+                        <div class="stat-subtitle">GitHub community</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3>Languages Distribution</h3>
+                    <div class="chart-container">
+                        <canvas id="languages-chart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Contribution Activity</h3>
+                    <div class="chart-container">
+                        <canvas id="activity-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="github-calendar">
+                <h3>Contribution Calendar</h3>
+                <div class="calendar-container" id="contribution-calendar">
+                    <!-- Calendar will be generated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section class="about-section" id="about-section">
+            <h2 class="section-title"><i class="fas fa-user"></i> About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hi there! 👋 I'm a passionate Full Stack Developer with expertise in building web applications that solve real-world problems. I love contributing to open source projects and continuously learning new technologies.</p>
+                    <p>My journey in software development has led me to work with various technologies and frameworks, always striving to write clean, efficient, and maintainable code.</p>
+                    <div class="key-highlights">
+                        <div class="highlight">
+                            <i class="fas fa-laptop-code"></i>
+                            <h4>Software Development</h4>
+                            <p>Creating robust and scalable applications</p>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-code-branch"></i>
+                            <h4>Open Source</h4>
+                            <p>Contributing to community projects</p>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Continuous Learning</h4>
+                            <p>Always expanding my knowledge</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-stack">
+                    <h3>My Tech Stack</h3>
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h3>Languages</h3>
+                            <div class="skills-list">
+                                <span class="skill">JavaScript</span>
+                                <span class="skill">Python</span>
+                                <span class="skill">Java</span>
+                                <span class="skill">C++</span>
+                                <span class="skill">HTML5</span>
+                                <span class="skill">CSS3</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Frameworks & Libraries</h3>
+                            <div class="skills-list">
+                                <span class="skill">React</span>
+                                <span class="skill">Node.js</span>
+                                <span class="skill">Express</span>
+                                <span class="skill">Django</span>
+                                <span class="skill">Bootstrap</span>
+                                <span class="skill">TailwindCSS</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Tools & Technologies</h3>
+                            <div class="skills-list">
+                                <span class="skill">Git</span>
+                                <span class="skill">MongoDB</span>
+                                <span class="skill">MySQL</span>
+                                <span class="skill">AWS</span>
+                                <span class="skill">Docker</span>
+                                <span class="skill">Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section class="projects-section" id="projects-section">
+            <h2 class="section-title"><i class="fas fa-project-diagram"></i> Featured Projects</h2>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Dev</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="tools">Tools</button>
+            </div>
+            <div class="projects-grid" id="projects-container">
+                <!-- Projects will be dynamically loaded -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Loading projects...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activity Timeline -->
+        <section class="timeline-section">
+            <h2 class="section-title"><i class="fas fa-history"></i> Recent Activity</h2>
+            <div class="timeline" id="activity-timeline">
+                <!-- Timeline items will be loaded dynamically -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Loading activity...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact-section">
+            <h2 class="section-title"><i class="fas fa-envelope"></i> Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>I'm always open to collaborating on interesting projects or discussing new opportunities. Feel free to reach out through any of these channels:</p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Email</h4>
+                            <a href="mailto:contact@deepakkumar.com" id="contact-email">Loading...</a>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fab fa-linkedin"></i>
+                            <h4>LinkedIn</h4>
+                            <a href="https://linkedin.com/in/deepakkumar55" target="_blank">Connect with me</a>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fab fa-twitter"></i>
+                            <h4>Twitter</h4>
+                            <a href="https://twitter.com/deepakkumar55" target="_blank">@deepakkumar55</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span id="footer-name">Deepak Kumar</span>
+                    <p>GitHub Portfolio</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="smooth-scroll">Home</a>
+                    <a href="#about-section" class="smooth-scroll">About</a>
+                    <a href="#projects-section" class="smooth-scroll">Projects</a>
+                    <a href="#contact-section" class="smooth-scroll">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="" target="_blank" id="footer-github"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/deepakkumar55" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/deepakkumar55" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Made with <i class="fas fa-heart"></i> by <span id="copyright-name">Deepak Kumar</span></p>
+                <p>Data powered by GitHub API | © <span id="current-year">2023</span></p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scroll Top Button -->
+    <button id="scroll-top" class="scroll-top-btn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
