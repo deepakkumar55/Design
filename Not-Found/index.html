@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="noise"></div>
+    
+    <main class="container">
+        <div class="glitch-wrapper">
+            <div class="glitch" data-text="404">404</div>
+        </div>
+        
+        <h1 class="error-message">Page Not Found</h1>
+        
+        <div class="spacecraft">
+            <div class="spacecraft-body"></div>
+            <div class="spacecraft-window"></div>
+            <div class="spacecraft-antenna"></div>
+            <div class="spacecraft-light"></div>
+        </div>
+        
+        <p class="description">
+            <span class="highlight">Oops!</span> It seems you've ventured into the void. This page has either been moved or doesn't exist in this dimension.
+        </p>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Search for content..." class="glow-input">
+            <button class="pulse-btn"><i class="fas fa-search"></i></button>
+        </div>
+        
+        <div class="back-home">
+            <a href="#" class="btn primary-btn">
+                <span class="btn-content"><i class="fas fa-home"></i> Return Home</span>
+            </a>
+            <a href="#" class="btn secondary-btn">
+                <span class="btn-content"><i class="fas fa-exclamation-circle"></i> Report Issue</span>
+            </a>
+        </div>
+        
+        <div class="floating-astronaut">
+            <div class="astronaut"></div>
+            <div class="astronaut-trail"></div>
+            <div class="space-flag">404</div>
+        </div>
+        
+        <!-- Interactive UFO -->
+        <div class="ufo" id="interactive-ufo">
+            <div class="ufo-body"></div>
+            <div class="ufo-beam"></div>
+            <div class="ufo-cockpit"></div>
+            <div class="ufo-lights"></div>
+        </div>
+        
+        <!-- Easter Egg Game -->
+        <div class="mini-game">
+            <button id="start-game" class="game-btn">Play Mini-Game</button>
+            <div id="game-container" class="hidden">
+                <div id="player"></div>
+                <div id="target"></div>
+                <div id="score">0</div>
+                <button id="close-game" class="game-btn">Close Game</button>
+            </div>
+        </div>
+        
+        <!-- Space Portal -->
+        <div class="space-portal">
+            <div class="portal-rings">
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+                <div class="ring ring-3"></div>
+            </div>
+            <div class="portal-core"></div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="planet planet-1"></div>
+        <div class="planet planet-2"></div>
+        <div class="planet planet-3">
+            <div class="planet-ring"></div>
+            <div class="planet-crater crater-1"></div>
+            <div class="planet-crater crater-2"></div>
+            <div class="planet-crater crater-3"></div>
+        </div>
+        <div class="black-hole">
+            <div class="event-horizon"></div>
+            <div class="accretion-disk"></div>
+        </div>
+        <div class="star star-1"></div>
+        <div class="star star-2"></div>
+        <div class="star star-3"></div>
+        <div class="constellation orion">
+            <svg viewBox="0 0 200 100" class="constellation-svg">
+                <line x1="40" y1="20" x2="60" y2="40" />
+                <line x1="60" y1="40" x2="80" y2="30" />
+                <line x1="80" y1="30" x2="100" y2="50" />
+                <line x1="100" y1="50" x2="120" y2="40" />
+                <circle cx="40" cy="20" r="2" class="star-point" />
+                <circle cx="60" cy="40" r="2" class="star-point" />
+                <circle cx="80" cy="30" r="3" class="star-point" />
+                <circle cx="100" cy="50" r="2" class="star-point" />
+                <circle cx="120" cy="40" r="2" class="star-point" />
+            </svg>
+        </div>
+        <div class="asteroid-field"></div>
+        <div class="meteor-shower" id="meteor-container"></div>
+        <div class="parallax-stars" id="parallax-stars-container"></div>
+    </footer>
+    
+    <div class="cursor-effects">
+        <div class="cursor-follower"></div>
+        <div class="cursor-trail"></div>
+    </div>
+    
+    <div class="audio-controls">
+        <button id="toggle-audio" class="audio-btn">
+            <i class="fas fa-volume-up" id="audio-icon"></i>
+        </button>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

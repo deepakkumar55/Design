@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Todo List App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>TaskMaster</h2>
+                <button id="toggleSidebar" class="toggle-sidebar"><i class="fas fa-bars"></i></button>
+            </div>
+            
+            <div class="user-profile">
+                <div class="avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-info">
+                    <h3 id="userName">Guest User</h3>
+                    <p id="userEmail">guest@example.com</p>
+                </div>
+                <button id="userSettingsBtn" class="icon-btn"><i class="fas fa-cog"></i></button>
+            </div>
+            
+            <div class="sidebar-section">
+                <h4>Views</h4>
+                <ul class="sidebar-menu">
+                    <li class="active"><a href="#" data-view="list"><i class="fas fa-list"></i> List View</a></li>
+                    <li><a href="#" data-view="kanban"><i class="fas fa-columns"></i> Kanban Board</a></li>
+                    <li><a href="#" data-view="calendar"><i class="fas fa-calendar-alt"></i> Calendar</a></li>
+                    <li><a href="#" data-view="stats"><i class="fas fa-chart-bar"></i> Statistics</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="section-header">
+                    <h4>Categories</h4>
+                    <button id="addCategoryBtn" class="icon-btn"><i class="fas fa-plus"></i></button>
+                </div>
+                <ul class="sidebar-menu" id="categoriesList">
+                    <li><a href="#" data-category="all"><i class="fas fa-globe"></i> All Tasks</a></li>
+                    <li><a href="#" data-category="work"><i class="fas fa-briefcase"></i> Work</a></li>
+                    <li><a href="#" data-category="personal"><i class="fas fa-home"></i> Personal</a></li>
+                    <li><a href="#" data-category="shopping"><i class="fas fa-shopping-cart"></i> Shopping</a></li>
+                    <li><a href="#" data-category="health"><i class="fas fa-heartbeat"></i> Health</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="section-header">
+                    <h4>Tags</h4>
+                    <button id="manageTagsBtn" class="icon-btn"><i class="fas fa-tags"></i></button>
+                </div>
+                <div class="tags-container" id="tagsList">
+                    <span class="tag">urgent</span>
+                    <span class="tag">meeting</span>
+                    <span class="tag">email</span>
+                    <span class="tag">call</span>
+                    <span class="tag">review</span>
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <button id="exportDataBtn"><i class="fas fa-download"></i> Export Data</button>
+                <button id="importDataBtn"><i class="fas fa-upload"></i> Import Data</button>
+            </div>
+        </nav>
+        
+        <main class="main-content">
+            <header class="main-header">
+                <div class="current-view">
+                    <h1 id="currentViewTitle">All Tasks</h1>
+                </div>
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search tasks...">
+                        <button id="searchButton"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="header-buttons">
+                        <button id="notificationsBtn" class="icon-btn"><i class="fas fa-bell"></i></button>
+                        <button id="darkModeToggle" class="dark-mode-toggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button id="helpBtn" class="icon-btn"><i class="fas fa-question-circle"></i></button>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="view-container" id="listView">
+                <div class="dashboard-summary">
+                    <div class="summary-card">
+                        <div class="summary-icon"><i class="fas fa-tasks"></i></div>
+                        <div class="summary-details">
+                            <h3 id="totalTasksCount">0</h3>
+                            <p>Total Tasks</p>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-icon"><i class="fas fa-hourglass-half"></i></div>
+                        <div class="summary-details">
+                            <h3 id="pendingTasksCount">0</h3>
+                            <p>Pending</p>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="summary-details">
+                            <h3 id="completedTasksCount">0</h3>
+                            <p>Completed</p>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-icon"><i class="fas fa-clock"></i></div>
+                        <div class="summary-details">
+                            <h3 id="overdueTasksCount">0</h3>
+                            <p>Overdue</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="progress-section">
+                    <div class="section-header">
+                        <h2>Progress</h2>
+                        <div class="progress-text" id="progressText">0% complete</div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                </div>
+                
+                <div class="task-input-section">
+                    <div class="input-container">
+                        <div class="input-row">
+                            <input type="text" id="taskInput" placeholder="Add a new task...">
+                            <button id="addButton">Add Task</button>
+                        </div>
+                        <div class="input-row advanced-options">
+                            <div class="input-group">
+                                <label for="taskCategory">Category</label>
+                                <select id="taskCategory">
+                                    <option value="work">Work</option>
+                                    <option value="personal" selected>Personal</option>
+                                    <option value="shopping">Shopping</option>
+                                    <option value="health">Health</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="dueDateInput">Due Date</label>
+                                <input type="date" id="dueDateInput">
+                            </div>
+                            <div class="input-group">
+                                <label for="prioritySelect">Priority</label>
+                                <select id="prioritySelect">
+                                    <option value="low">Low</option>
+                                    <option value="medium" selected>Medium</option>
+                                    <option value="high">High</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="estimatedTime">Est. Time (min)</label>
+                                <input type="number" id="estimatedTime" min="5" step="5" value="30">
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group full-width">
+                                <label for="taskDescription">Description (optional)</label>
+                                <textarea id="taskDescription" placeholder="Add details about this task..."></textarea>
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label>Tags</label>
+                                <div class="tags-input-container">
+                                    <input type="text" id="tagInput" placeholder="Add tags...">
+                                    <div id="selectedTags" class="selected-tags"></div>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>Repeat</label>
+                                <select id="repeatSelect">
+                                    <option value="never">Never</option>
+                                    <option value="daily">Daily</option>
+                                    <option value="weekly">Weekly</option>
+                                    <option value="monthly">Monthly</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tasks-section">
+                    <div class="section-header">
+                        <h2>Tasks</h2>
+                        <div class="view-options">
+                            <div class="sort-container">
+                                <label for="sortSelect">Sort by:</label>
+                                <select id="sortSelect">
+                                    <option value="dueDate">Due Date</option>
+                                    <option value="priority">Priority</option>
+                                    <option value="name">Name</option>
+                                    <option value="category">Category</option>
+                                </select>
+                            </div>
+                            <div class="filters">
+                                <button class="filter-btn active" data-filter="all">All</button>
+                                <button class="filter-btn" data-filter="active">Active</button>
+                                <button class="filter-btn" data-filter="completed">Completed</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul id="taskList" class="task-list"></ul>
+                    
+                    <div class="app-footer">
+                        <div id="taskCount">0 tasks left</div>
+                        <div class="footer-actions">
+                            <button id="clearCompletedBtn">Clear Completed</button>
+                            <button id="archiveTasksBtn">Archive Tasks</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-container hidden" id="kanbanView">
+                <div class="kanban-board">
+                    <div class="kanban-column" data-status="todo">
+                        <div class="column-header">
+                            <h3>To Do</h3>
+                            <span class="task-count">0</span>
+                        </div>
+                        <div class="column-content" id="todoColumn"></div>
+                    </div>
+                    <div class="kanban-column" data-status="inProgress">
+                        <div class="column-header">
+                            <h3>In Progress</h3>
+                            <span class="task-count">0</span>
+                        </div>
+                        <div class="column-content" id="inProgressColumn"></div>
+                    </div>
+                    <div class="kanban-column" data-status="reviewing">
+                        <div class="column-header">
+                            <h3>Reviewing</h3>
+                            <span class="task-count">0</span>
+                        </div>
+                        <div class="column-content" id="reviewingColumn"></div>
+                    </div>
+                    <div class="kanban-column" data-status="done">
+                        <div class="column-header">
+                            <h3>Done</h3>
+                            <span class="task-count">0</span>
+                        </div>
+                        <div class="column-content" id="doneColumn"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-container hidden" id="calendarView">
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                        <h2 id="currentMonth">January 2023</h2>
+                        <button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-weekdays">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div class="calendar-days" id="calendarDays"></div>
+                </div>
+                <div class="day-tasks">
+                    <h3 id="selectedDate">Tasks for Today</h3>
+                    <ul id="dayTasksList"></ul>
+                </div>
+            </div>
+            
+            <div class="view-container hidden" id="statsView">
+                <div class="stats-container">
+                    <div class="stats-row">
+                        <div class="stats-card">
+                            <h3>Task Completion Rate</h3>
+                            <div class="chart-container" id="completionRateChart"></div>
+                        </div>
+                        <div class="stats-card">
+                            <h3>Tasks by Category</h3>
+                            <div class="chart-container" id="categoryDistributionChart"></div>
+                        </div>
+                    </div>
+                    <div class="stats-row">
+                        <div class="stats-card">
+                            <h3>Weekly Activity</h3>
+                            <div class="chart-container" id="weeklyActivityChart"></div>
+                        </div>
+                        <div class="stats-card">
+                            <h3>Task Completion Time</h3>
+                            <div class="chart-container" id="completionTimeChart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Modal Templates -->
+    <div class="modal" id="taskDetailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTaskTitle">Task Details</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="task-details-container">
+                    <!-- Will be populated dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="editTaskModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Task</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editTaskForm">
+                    <!-- Will be populated dynamically -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cancelEditBtn">Cancel</button>
+                <button type="button" id="saveTaskBtn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="userSettingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>User Settings</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-tabs">
+                    <button class="tab-btn active" data-tab="profile">Profile</button>
+                    <button class="tab-btn" data-tab="preferences">Preferences</button>
+                    <button class="tab-btn" data-tab="notifications">Notifications</button>
+                    <button class="tab-btn" data-tab="theme">Theme</button>
+                </div>
+                <div class="tab-content">
+                    <!-- Will be populated dynamically based on active tab -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="toast-container" id="toastContainer"></div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
