@@ -4,8 +4,9 @@ Welcome to my design projects collection. Here you can find links to various web
 
 ## Projects
 
-- [GitHub Profile Design](https://deepakkumar55.github.io/Design/GithubProfile/) - A custom GitHub profile page template
+- [GitHub Profile Design](https://deepakkumar55.github.io/Design/GithubProfile/) - A custom GitHub profile p-age template
 - [Unforgettable](https://deepakkumar55.github.io/Design/Unforgettable/) - A memorable design experience
+- [Not Found](https://deepakkumar55.github.io/Design/Not-Found/) - A 404 page template
 
 ## How to Use
 
