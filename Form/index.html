@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Wizard Builder</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Form Wizard Builder</h1>
+    </header>
+    
+    <main class="builder-container">
+        <aside class="elements-panel">
+            <h2>Form Elements</h2>
+            <div class="elements-list">
+                <div class="form-element" draggable="true" data-type="text">
+                    <i class="fas fa-font"></i> Text Input
+                </div>
+                <div class="form-element" draggable="true" data-type="number">
+                    <i class="fas fa-hashtag"></i> Number
+                </div>
+                <div class="form-element" draggable="true" data-type="email">
+                    <i class="fas fa-envelope"></i> Email
+                </div>
+                <div class="form-element" draggable="true" data-type="select">
+                    <i class="fas fa-list"></i> Dropdown
+                </div>
+                <div class="form-element" draggable="true" data-type="checkbox">
+                    <i class="fas fa-check-square"></i> Checkbox
+                </div>
+                <div class="form-element" draggable="true" data-type="radio">
+                    <i class="fas fa-dot-circle"></i> Radio Buttons
+                </div>
+                <div class="form-element" draggable="true" data-type="textarea">
+                    <i class="fas fa-paragraph"></i> Text Area
+                </div>
+                <div class="form-element" draggable="true" data-type="date">
+                    <i class="fas fa-calendar"></i> Date Picker
+                </div>
+            </div>
+            
+            <div class="steps-control">
+                <h2>Form Steps</h2>
+                <button id="add-step" class="btn"><i class="fas fa-plus"></i> Add Step</button>
+                <div class="steps-list" id="steps-list">
+                    <div class="step-item active" data-step="1">Step 1</div>
+                </div>
+            </div>
+        </aside>
+        
+        <section class="form-canvas">
+            <div class="step-tabs">
+                <div class="tab active" data-step="1">Step 1</div>
+                <button id="add-step-tab" class="add-tab-btn"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="canvas" id="form-canvas">
+                <div class="dropzone" data-step="1">
+                    <p class="empty-canvas">Drag and drop form elements here</p>
+                </div>
+            </div>
+        </section>
+        
+        <aside class="preview-panel">
+            <h2>Live Preview</h2>
+            <div class="preview-container">
+                <div class="form-preview" id="form-preview">
+                    <div class="preview-step" data-step="1">
+                        <h3>Step 1</h3>
+                        <div class="preview-content"></div>
+                        <div class="preview-nav">
+                            <button class="btn next-btn">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="properties-panel" id="properties-panel">
+                <h3>Element Properties</h3>
+                <p class="no-selection">No element selected</p>
+                <div class="properties-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="prop-label">Label</label>
+                        <input type="text" id="prop-label">
+                    </div>
+                    <div class="form-group">
+                        <label for="prop-name">Name</label>
+                        <input type="text" id="prop-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="prop-placeholder">Placeholder</label>
+                        <input type="text" id="prop-placeholder">
+                    </div>
+                    <div class="form-group">
+                        <label>Validation</label>
+                        <div class="validation-options">
+                            <label>
+                                <input type="checkbox" id="prop-required">
+                                Required
+                            </label>
+                            <label>
+                                <input type="checkbox" id="prop-min-length">
+                                Min Length <input type="number" id="prop-min-length-val" class="small-input">
+                            </label>
+                            <label>
+                                <input type="checkbox" id="prop-max-length">
+                                Max Length <input type="number" id="prop-max-length-val" class="small-input">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+    
+    <script src="js/dragDrop.js"></script>
+    <script src="js/preview.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/formBuilder.js"></script>
+</body>
+</html>

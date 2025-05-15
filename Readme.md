@@ -9,6 +9,7 @@ Welcome to my design projects collection. Here you can find links to various web
 - [Not Found](https://deepakkumar55.github.io/Design/Not-Found/) - A 404 page template
 - [Coming Soon](https://deepakkumar55.github.io/Design/Coming-Soon/) - A coming soon page template
 - [Vyapar Dashboard](https://deepakkumar55.github.io/Design/Vyapar/) - A dashboard template for business management
+- [Form Design](https://deepakkumar55.github.io/Design/Form/) - A form design template
 
 ## How to Use
 
