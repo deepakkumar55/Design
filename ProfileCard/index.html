@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepak's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="theme-toggle" aria-label="Toggle dark mode">
+        <div class="toggle-icon">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+        </div>
+    </div>
+
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+    
+    <div class="container">
+        <div class="profile-card">
+            <div class="profile-sidebar">
+                <div class="profile-img-container">
+                    <div class="profile-img">
+                        <img src="https://avatars.githubusercontent.com/u/101995144?v=4" alt="Profile Image">
+                        <div class="img-overlay">
+                            <div class="overlay-icon"><i class="fas fa-camera"></i></div>
+                        </div>
+                    </div>
+                    <div class="status-indicator online" title="Currently Available">
+                        <span class="pulse-dot"></span>
+                        <span class="status-text">Available</span>
+                    </div>
+                </div>
+                
+                <div class="profile-badge" aria-label="Employment status">
+                    <span><i class="fas fa-briefcase"></i> Available for hire</span>
+                </div>
+                
+                <div class="profile-meta">
+                    <div class="meta-item" aria-label="Hourly rate">
+                        <i class="fas fa-clock"></i>
+                        <span>$45/hr</span>
+                    </div>
+                    <div class="meta-item" aria-label="Success rate">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>100% Job Success</span>
+                    </div>
+                    <div class="meta-item" aria-label="Languages spoken">
+                        <i class="fas fa-language"></i>
+                        <span>English, Hindi</span>
+                    </div>
+                </div>
+                
+                <div class="social-icons">
+                    <a href="#" class="icon tooltip" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="icon tooltip" data-tooltip="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="icon tooltip" data-tooltip="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" class="icon tooltip" data-tooltip="Dribbble"><i class="fab fa-dribbble"></i></a>
+                </div>
+            </div>
+            
+            <div class="profile-content">
+                <div class="profile-header">
+                    <div>
+                        <h1 class="name">Deepak <span class="verified-badge" title="Verified Professional"><i class="fas fa-check-circle"></i></span></h1>
+                        <p class="job"><i class="fas fa-code"></i> Front-end Developer</p>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="contact-btn primary-btn"><i class="fas fa-envelope"></i> Contact Me</button>
+                        <button class="download-btn secondary-btn"><i class="fas fa-download"></i> Resume</button>
+                    </div>
+                </div>
+                
+                <div class="tabs-container">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="about">About</button>
+                        <button class="tab-btn" data-tab="skills">Skills</button>
+                        <button class="tab-btn" data-tab="projects">Projects</button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="about">
+                            <h3>About Me</h3>
+                            <p class="bio">Passionate front-end developer with a keen eye for design and user experience. I specialize in creating beautiful, functional, and accessible web experiences with a focus on user-centered design principles and modern development practices.</p>
+                            
+                            <div class="highlights">
+                                <div class="highlight-item">
+                                    <div class="highlight-icon"><i class="fas fa-graduation-cap"></i></div>
+                                    <div class="highlight-info">
+                                        <h4>Education</h4>
+                                        <p>B.Tech in Computer Science</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <div class="highlight-icon"><i class="fas fa-laptop-code"></i></div>
+                                    <div class="highlight-info">
+                                        <h4>Experience</h4>
+                                        <p>3+ years in web development</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <div class="highlight-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                    <div class="highlight-info">
+                                        <h4>Location</h4>
+                                        <p>Remote / Worldwide</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane" id="skills">
+                            <h3>Skills & Expertise</h3>
+                            <div class="skills-container">
+                                <div class="skill-category">
+                                    <h4>Front-end</h4>
+                                    <div class="skill-bars">
+                                        <div class="skill-bar">
+                                            <div class="skill-label">HTML5/CSS3</div>
+                                            <div class="skill-progress">
+                                                <div class="progress-bar" style="width: 95%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-label">JavaScript</div>
+                                            <div class="skill-progress">
+                                                <div class="progress-bar" style="width: 90%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-label">React</div>
+                                            <div class="skill-progress">
+                                                <div class="progress-bar" style="width: 85%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-category">
+                                    <h4>Design</h4>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">UI/UX</span>
+                                        <span class="skill-tag">Responsive Design</span>
+                                        <span class="skill-tag">Figma</span>
+                                        <span class="skill-tag">Design Systems</span>
+                                        <span class="skill-tag">Typography</span>
+                                        <span class="skill-tag">Accessibility</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-category">
+                                    <h4>Tools & Others</h4>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Git</span>
+                                        <span class="skill-tag">NPM</span>
+                                        <span class="skill-tag">Webpack</span>
+                                        <span class="skill-tag">Jest</span>
+                                        <span class="skill-tag">SASS</span>
+                                        <span class="skill-tag">REST APIs</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane" id="projects">
+                            <h3>Featured Projects</h3>
+                            <div class="projects-grid">
+                                <div class="project-card">
+                                    <div class="project-img" style="background-image: url('https://via.placeholder.com/300x180')"></div>
+                                    <div class="project-info">
+                                        <h4>E-commerce Dashboard</h4>
+                                        <p>Modern UI for managing online store with real-time analytics</p>
+                                        <div class="project-tags">
+                                            <span>React</span>
+                                            <span>Redux</span>
+                                            <span>Charts.js</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-card">
+                                    <div class="project-img" style="background-image: url('https://via.placeholder.com/300x180')"></div>
+                                    <div class="project-info">
+                                        <h4>Weather App</h4>
+                                        <p>Beautiful weather forecasting application with location services</p>
+                                        <div class="project-tags">
+                                            <span>JavaScript</span>
+                                            <span>Weather API</span>
+                                            <span>CSS3</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonials-section">
+                    <h3><i class="fas fa-quote-left"></i> Testimonials</h3>
+                    
+                    <div class="testimonial-slider">
+                        <div class="testimonial-card active">
+                            <div class="testimonial-content">
+                                <p>"Deepak created an exceptional website for our business. His attention to detail and responsive design skills are unmatched."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-img">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                                </div>
+                                <div class="author-info">
+                                    <h4>John Smith</h4>
+                                    <p>CEO, TechStartup</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Working with Deepak was a pleasure. He delivered our project on time and exceeded our expectations with his creativity."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-img">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Sarah Johnson</h4>
+                                    <p>Marketing Director</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-controls">
+                            <button class="control-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <div class="control-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <button class="control-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-cta">
+                    <p>Looking for a dedicated front-end developer for your next project?</p>
+                    <button class="cta-btn"><i class="fas fa-rocket"></i> Start a Project</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form-container">
+            <div class="contact-form">
+                <div class="form-header">
+                    <h3><i class="fas fa-paper-plane"></i> Get In Touch</h3>
+                    <button class="close-btn"><i class="fas fa-times"></i></button>
+                </div>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="name" placeholder="Your name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" placeholder="your.email@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <div class="input-with-icon textarea-container">
+                            <i class="fas fa-comment-alt"></i>
+                            <textarea id="message" rows="4" placeholder="How can I help you?" required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
