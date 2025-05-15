@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Product Card</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="product-card">
+            <div class="badge">New</div>
+            <div class="product-tumb">
+                <img src="https://via.placeholder.com/350x350" alt="Product Image">
+                <div class="product-quick-actions">
+                    <button class="quick-view"><i class="fas fa-eye"></i></button>
+                    <button class="quick-wishlist"><i class="fas fa-heart"></i></button>
+                </div>
+            </div>
+            <div class="product-details">
+                <div class="product-meta">
+                    <span class="product-category">Electronics</span>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="rating-count">(42)</span>
+                    </div>
+                </div>
+                <h4><a href="">Ultra HD Smart Watch Pro</a></h4>
+                <p>Advanced smartwatch with health monitoring, GPS tracking, and 7-day battery life. Water-resistant design with AMOLED display.</p>
+                <div class="product-specs">
+                    <span><i class="fas fa-microchip"></i> Quad-core processor</span>
+                    <span><i class="fas fa-battery-full"></i> 7-day battery</span>
+                    <span><i class="fas fa-tint"></i> IP68 waterproof</span>
+                </div>
+                <div class="color-options">
+                    <span class="color-label">Color:</span>
+                    <div class="colors">
+                        <button class="color-option active" style="background-color: #333333;" data-color="black"></button>
+                        <button class="color-option" style="background-color: #c0c0c0;" data-color="silver"></button>
+                        <button class="color-option" style="background-color: #b76e79;" data-color="rose-gold"></button>
+                    </div>
+                </div>
+                <div class="product-bottom-details">
+                    <div class="product-info-row">
+                        <div class="product-price">
+                            <div class="price-wrapper">
+                                <small>$299.99</small>
+                                <span class="current-price">$249.99</span>
+                                <span class="discount-badge">-17%</span>
+                            </div>
+                            <div class="stock-info in-stock">
+                                <i class="fas fa-check-circle"></i> In Stock
+                                <span class="stock-count">(12 left)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-tabs">
+                        <div class="tab active" data-tab="shipping">Shipping</div>
+                        <div class="tab" data-tab="warranty">Warranty</div>
+                        <div class="tab" data-tab="returns">Returns</div>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="shipping">
+                            <div class="shipping-info">
+                                <i class="fas fa-truck"></i> Free shipping
+                                <span class="delivery-est">Delivery: 1-2 business days</span>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="warranty">
+                            <div class="warranty-info">
+                                <i class="fas fa-shield-alt"></i> 2-year manufacturer warranty
+                                <span class="warranty-link"><a href="#">View details</a></span>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="returns">
+                            <div class="returns-info">
+                                <i class="fas fa-undo"></i> 30-day free returns
+                                <span class="returns-link"><a href="#">Return policy</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="variant-options">
+                        <span class="size-label">Size:</span>
+                        <div class="sizes">
+                            <button class="size-option">S</button>
+                            <button class="size-option active">M</button>
+                            <button class="size-option">L</button>
+                        </div>
+                    </div>
+                    
+                    <div class="purchase-options">
+                        <div class="quantity-selector">
+                            <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                            <input type="number" value="1" min="1" max="10" class="qty-input">
+                            <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="buy-now">Buy Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="additional-actions">
+                        <button class="action-btn wishlist-btn"><i class="far fa-heart"></i> Wishlist</button>
+                        <button class="action-btn compare-btn"><i class="fas fa-exchange-alt"></i> Compare</button>
+                        <button class="action-btn share-btn"><i class="fas fa-share-alt"></i> Share</button>
+                    </div>
+                    
+                    <div class="secure-payment">
+                        <span class="secure-label"><i class="fas fa-lock"></i> Secure Payment</span>
+                        <div class="payment-options">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-cc-apple-pay"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

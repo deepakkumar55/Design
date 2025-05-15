@@ -11,6 +11,7 @@ Welcome to my design projects collection. Here you can find links to various web
 - [Vyapar Dashboard](https://deepakkumar55.github.io/Design/Vyapar/) - A dashboard template for business management
 - [Form Design](https://deepakkumar55.github.io/Design/Form/) - A form design template
 - [Profile Card](https://deepakkumar55.github.io/Design/ProfileCard/) - A profile card design
+- [Product Card](https://deepakkumar55.github.io/Design/ProductCard/) - A product card design
 
 ## How to Use
 
