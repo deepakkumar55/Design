@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="noise-overlay"></div>
+    
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    
+    <div class="container">
+        <header class="animate__animated animate__fadeInDown">
+            <div class="logo">
+                <span>BRAND</span>
+            </div>
+            <h1>We're <span class="accent">Coming Soon</span></h1>
+            <p>Our team is working on something <span class="typing"></span></p>
+        </header>
+        
+        <div class="countdown animate__animated animate__fadeIn animate__delay-1s">
+            <div class="time glass-card">
+                <span id="days">00</span>
+                <span class="label">Days</span>
+            </div>
+            <div class="time glass-card">
+                <span id="hours">00</span>
+                <span class="label">Hours</span>
+            </div>
+            <div class="time glass-card">
+                <span id="minutes">00</span>
+                <span class="label">Minutes</span>
+            </div>
+            <div class="time glass-card">
+                <span id="seconds">00</span>
+                <span class="label">Seconds</span>
+            </div>
+        </div>
+        
+        <div class="subscription animate__animated animate__fadeIn animate__delay-2s glass-panel">
+            <h2>Get <span class="accent">Notified</span> When We Launch</h2>
+            <form id="subscription-form">
+                <div class="input-group">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn-primary">
+                        <span class="btn-text">Notify Me</span>
+                        <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                    </button>
+                </div>
+                <div class="success-message">Thank you! We'll be in touch soon.</div>
+            </form>
+        </div>
+        
+        <div class="social-links animate__animated animate__fadeIn animate__delay-3s">
+            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js"></script>
+</body>
+</html>
