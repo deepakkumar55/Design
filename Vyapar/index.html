@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyapar Analytics | Enterprise Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><span class="highlight">Vyapar</span> Analytics</h2>
+                <button id="toggleNav" class="toggle-btn"><i class="fas fa-bars"></i></button>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+                    <li><a href="#"><i class="fas fa-chart-line"></i> <span>Analytics</span></a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> <span>Customers</span></a></li>
+                    <li><a href="#"><i class="fas fa-box"></i> <span>Products</span></a></li>
+                    <li><a href="#"><i class="fas fa-rupee-sign"></i> <span>Finance</span></a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+                    <li class="divider"></li>
+                    <li><a href="#"><i class="fas fa-headset"></i> <span>Support</span></a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Powered by <span class="highlight">TheCampusCoders</span></p>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="welcome-message">
+                    <h3>Welcome, <span class="highlight">Aravind</span></h3>
+                    <p>Today is a great day for business!</p>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-profile">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">5</span>
+                    </div>
+                    <div class="profile">
+                        <img src="https://randomuser.me/api/portraits/men/73.jpg" alt="User">
+                        <span>Aravind Singh</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Filter Section -->
+            <section class="filters">
+                <h3>Filters <i class="fas fa-filter"></i></h3>
+                <div class="filter-options">
+                    <div class="filter-group">
+                        <label>Date Range:</label>
+                        <select id="dateFilter">
+                            <option>Today</option>
+                            <option>This Week</option>
+                            <option>This Month</option>
+                            <option>Last Month</option>
+                            <option>Last Quarter</option>
+                            <option>Custom</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Region:</label>
+                        <select id="categoryFilter">
+                            <option>All Regions</option>
+                            <option>North India</option>
+                            <option>South India</option>
+                            <option>East India</option>
+                            <option>West India</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Status:</label>
+                        <select id="statusFilter">
+                            <option>All Statuses</option>
+                            <option>Processing</option>
+                            <option>Completed</option>
+                            <option>Pending</option>
+                            <option>Cancelled</option>
+                        </select>
+                    </div>
+                    <button class="apply-filters">Apply Filters</button>
+                </div>
+            </section>
+
+            <!-- Cards Section -->
+            <section class="card-container">
+                <div class="card revenue-card">
+                    <div class="card-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <div class="card-header">
+                        <h3>Total Revenue</h3>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="card-body">
+                        <h2>₹18,75,500</h2>
+                        <p><span class="up"><i class="fas fa-arrow-up"></i> 16%</span> vs last month</p>
+                    </div>
+                    <div class="card-footer">
+                        <small>Last updated: Today 10:25 AM</small>
+                    </div>
+                </div>
+                <div class="card visitors-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="card-header">
+                        <h3>Visitors</h3>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="card-body">
+                        <h2>85,678</h2>
+                        <p><span class="up"><i class="fas fa-arrow-up"></i> 12%</span> vs last month</p>
+                    </div>
+                    <div class="card-footer">
+                        <small>Last updated: Today 10:25 AM</small>
+                    </div>
+                </div>
+                <div class="card orders-card">
+                    <div class="card-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="card-header">
+                        <h3>Orders</h3>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="card-body">
+                        <h2>4,250</h2>
+                        <p><span class="down"><i class="fas fa-arrow-down"></i> 3%</span> vs last month</p>
+                    </div>
+                    <div class="card-footer">
+                        <small>Last updated: Today 10:25 AM</small>
+                    </div>
+                </div>
+                <div class="card conversion-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="card-header">
+                        <h3>Conversion Rate</h3>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="card-body">
+                        <h2>3.8%</h2>
+                        <p><span class="up"><i class="fas fa-arrow-up"></i> 0.7%</span> vs last month</p>
+                    </div>
+                    <div class="card-footer">
+                        <small>Last updated: Today 10:25 AM</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <section class="charts-container">
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>Sales Overview</h3>
+                        <div class="chart-actions">
+                            <button class="active">Weekly</button>
+                            <button>Monthly</button>
+                            <button>Yearly</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                    <div class="card-footer">
+                        <div class="legend">
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #4361EE;"></span>
+                                <span>North India</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #3A0CA3;"></span>
+                                <span>South India</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #4CC9F0;"></span>
+                                <span>East India</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #F72585;"></span>
+                                <span>West India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>Traffic Sources</h3>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="trafficChart"></canvas>
+                    </div>
+                    <div class="card-footer">
+                        <p>Total visitors: <strong>85,678</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity Table -->
+            <section class="recent-activity">
+                <div class="card-header">
+                    <h3>Recent Activities</h3>
+                    <button class="view-all-btn">View All <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-9856</td>
+                                <td>
+                                    <div class="customer-info">
+                                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer">
+                                        <div>
+                                            <p>Ananya Sharma</p>
+                                            <small>Mumbai, Maharashtra</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>May 15, 2023</td>
+                                <td>₹12,500</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td><button class="action-btn"><i class="fas fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-8745</td>
+                                <td>
+                                    <div class="customer-info">
+                                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Customer">
+                                        <div>
+                                            <p>Vikash Mehta</p>
+                                            <small>Bengaluru, Karnataka</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>May 14, 2023</td>
+                                <td>₹25,050</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-7654</td>
+                                <td>
+                                    <div class="customer-info">
+                                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Customer">
+                                        <div>
+                                            <p>Divya Gupta</p>
+                                            <small>Delhi, Delhi</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>May 14, 2023</td>
+                                <td>₹8,999</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td><button class="action-btn"><i class="fas fa-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-6543</td>
+                                <td>
+                                    <div class="customer-info">
+                                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Customer">
+                                        <div>
+                                            <p>Rohit Patel</p>
+                                            <small>Ahmedabad, Gujarat</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>May 13, 2023</td>
+                                <td>₹32,075</td>
+                                <td><span class="status active">Processing</span></td>
+                                <td><button class="action-btn"><i class="fas fa-eye"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Trending Products Section -->
+            <section class="trending-products">
+                <div class="card-header">
+                    <h3>Trending Products</h3>
+                    <button class="view-all-btn">View All <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="products-container">
+                    <div class="product-card">
+                        <div class="product-badge">Hot</div>
+                        <img src="https://via.placeholder.com/150" alt="Product">
+                        <h4>SmartWatch Pro</h4>
+                        <p class="price">₹4,999 <span class="original-price">₹6,999</span></p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(245)</span>
+                        </div>
+                        <button class="view-product-btn">View Details</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/150" alt="Product">
+                        <h4>Wireless Earbuds</h4>
+                        <p class="price">₹2,499 <span class="original-price">₹3,499</span></p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(187)</span>
+                        </div>
+                        <button class="view-product-btn">View Details</button>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-badge">New</div>
+                        <img src="https://via.placeholder.com/150" alt="Product">
+                        <h4>Smartphone X Pro</h4>
+                        <p class="price">₹24,999 <span class="original-price">₹29,999</span></p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(412)</span>
+                        </div>
+                        <button class="view-product-btn">View Details</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/150" alt="Product">
+                        <h4>Bluetooth Speaker</h4>
+                        <p class="price">₹1,999 <span class="original-price">₹2,999</span></p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <span>(98)</span>
+                        </div>
+                        <button class="view-product-btn">View Details</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
