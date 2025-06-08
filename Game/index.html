@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pear Connection Puzzle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="Connect pears in this fun puzzle game to complete each level">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <div class="logo-container">
+                <img src="images/pear-logo.svg" alt="" class="logo-icon">
+                <h1>Pear Connection</h1>
+            </div>
+            
+            <div class="settings-menu">
+                <button id="settings-btn" aria-label="Settings" class="icon-button">⚙️</button>
+                <div id="settings-panel" class="settings-panel" hidden>
+                    <h3>Settings</h3>
+                    <div class="setting-option">
+                        <label for="difficulty">Difficulty:</label>
+                        <select id="difficulty">
+                            <option value="easy">Easy</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                    <div class="setting-option">
+                        <label>
+                            <input type="checkbox" id="animation-toggle" checked>
+                            Enable animations
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="instructions-container">
+            <button id="instructions-toggle" aria-expanded="false" aria-controls="instructions-panel" class="collapsible-btn">
+                How to Play <span class="toggle-icon">▼</span>
+            </button>
+            <div id="instructions-panel" class="instructions-panel" hidden>
+                <ul>
+                    <li>Click on a pear to select it</li>
+                    <li>Click on another pear to connect them with a line</li>
+                    <li>Lines can only be drawn horizontally or vertically</li>
+                    <li>Lines cannot cross through other pears</li>
+                    <li>Connect all pears to complete the level</li>
+                </ul>
+                <div class="keyboard-shortcuts">
+                    <h4>Keyboard Shortcuts:</h4>
+                    <p><kbd>Arrow Keys</kbd>: Navigate between pears</p>
+                    <p><kbd>Enter</kbd> or <kbd>Space</kbd>: Connect selected pears</p>
+                    <p><kbd>Esc</kbd>: Cancel selection</p>
+                    <p><kbd>R</kbd>: Reset level</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-dashboard">
+            <div class="game-info">
+                <div class="level-info">
+                    <div class="level">Level: <span id="level-number">1</span></div>
+                    <div class="timer" aria-live="polite">Time: <span id="timer">00:00</span></div>
+                </div>
+                <div class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="controls">
+                    <button id="reset-btn" aria-label="Reset Level" class="game-btn">
+                        <span class="icon">↺</span> Reset
+                    </button>
+                    <button id="next-btn" disabled aria-label="Next Level" class="game-btn primary-btn">
+                        Next <span class="icon">→</span>
+                    </button>
+                    <button id="sound-toggle" aria-label="Toggle Sound" class="icon-button sound-on">🔊</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="canvas-container">
+            <canvas id="game-canvas" tabindex="0" aria-label="Pear Connection Game Board"></canvas>
+        </div>
+        
+        <div id="completion-modal" class="modal" hidden>
+            <div class="modal-content">
+                <div class="confetti-container" id="confetti"></div>
+                <h2>Level Complete!</h2>
+                <div class="completion-stats">
+                    <div class="stat">
+                        <span class="stat-label">Time:</span>
+                        <span class="stat-value" id="completion-time">00:00</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Connections:</span>
+                        <span class="stat-value" id="completion-connections">0</span>
+                    </div>
+                    <div class="rating">
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button id="replay-btn" class="game-btn">Replay Level</button>
+                    <button id="next-level-btn" class="game-btn primary-btn">Next Level</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="connect-sound" src="sounds/connect.mp3" preload="auto"></audio>
+    <audio id="complete-sound" src="sounds/complete.mp3" preload="auto"></audio>
+    <audio id="error-sound" src="sounds/error.mp3" preload="auto"></audio>
+    <audio id="select-sound" src="sounds/select.mp3" preload="auto"></audio>
+    
+    <script src="confetti.js"></script>
+    <script src="levels.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

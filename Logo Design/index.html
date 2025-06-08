@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheCampusCoders Logo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="logo-container">
+        <div class="logo-bg">
+            <svg class="logo" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+                <!-- Circle border - thick, white border -->
+                <circle class="circle-border" cx="400" cy="400" r="380" fill="none" stroke="#ffffff" stroke-width="30"/>
+                
+                <g class="logo-elements">
+                    <!-- Left angle bracket forming left side of cap -->
+                    <path class="bracket left-bracket" d="M300 220 L220 400 L300 580" fill="none" stroke="#ffffff" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+                    
+                    <!-- Right angle bracket forming right side of cap -->
+                    <path class="bracket right-bracket" d="M500 220 L580 400 L500 580" fill="none" stroke="#ffffff" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+                    
+                    <!-- Graduation cap base - connecting the brackets -->
+                    <path class="cap-base" d="M300 580 Q400 530 500 580" fill="none" stroke="#ffffff" stroke-width="30" stroke-linecap="round"/>
+                    
+                    <!-- Forward slash in center -->
+                    <path class="forward-slash" d="M400 220 L320 520" fill="none" stroke="#ffffff" stroke-width="30" stroke-linecap="round"/>
+                    
+                    <!-- Tassel hanging from right side -->
+                    <path class="tassel" d="M500 520 C520 550, 540 580, 520 630" fill="none" stroke="#ffffff" stroke-width="15" stroke-linecap="round"/>
+                    <circle class="tassel-end" cx="520" cy="650" r="15" fill="#ffffff"/>
+                </g>
+            </svg>
+        </div>
+        
+        <div class="text-content">
+            <h1 class="title">TheCampusCoders</h1>
+            <div class="tagline">Code. Learn. Innovate.</div>
+        </div>
+    </div>
+    
+    <div class="background-elements">
+        <div class="particle" id="particle1"></div>
+        <div class="particle" id="particle2"></div>
+        <div class="particle" id="particle3"></div>
+        <div class="code-rain"></div>
+    </div>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
